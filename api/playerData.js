@@ -70,10 +70,10 @@ const deleteSinglePlayer = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-export default {
+export {
   getPlayers,
   getSinglePlayer,
-  createPlayer,
   updatePlayer,
   deleteSinglePlayer,
+  createPlayer,
 };
