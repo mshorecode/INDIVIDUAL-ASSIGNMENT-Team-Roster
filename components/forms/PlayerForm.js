@@ -48,7 +48,7 @@ export default function PlayerForm({ playerObj }) {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <h2 className="text-black mt-5">{playerObj.firebaseKey ? 'Update' : 'Create'} Player</h2>
+      <h1 className="text-black mt-5">{playerObj.firebaseKey ? 'Update' : 'Add'} Player</h1>
 
       {/* NAME INPUT  */}
       <FloatingLabel controlId="floatingInput1" label="Player First Name" className="mb-3">
@@ -122,7 +122,7 @@ export default function PlayerForm({ playerObj }) {
       </FloatingLabel>
 
       {/* SUBMIT BUTTON  */}
-      <Button type="submit">{playerObj.firebaseKey ? 'Update' : 'Create'} Player</Button>
+      <Button type="submit">{playerObj.firebaseKey ? 'Update' : 'Add'} Player</Button>
     </Form>
   );
 }
