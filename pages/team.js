@@ -17,7 +17,7 @@ export default function ShowTeam() {
 
   return (
     <div className="text-center my-4">
-      <h1>Virginia Tech Hokies</h1>
+      <h1 id="header">Virginia Tech Hokies</h1>
       <div className="d-flex flex-wrap">
         {team.map((teams) => (
           <PlayerCard key={teams.firebaseKey} playerObj={teams} onUpdate={renderTeam} />
