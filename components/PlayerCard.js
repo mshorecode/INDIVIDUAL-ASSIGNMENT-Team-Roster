@@ -1,7 +1,9 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Card } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import Link from 'next/link';
+import { RiDeleteBinLine, RiEditBoxLine } from 'react-icons/ri';
 import { deleteSinglePlayer } from '../api/playerData';
 
 export default function PlayerCard({ playerObj, onUpdate }) {
@@ -12,24 +14,30 @@ export default function PlayerCard({ playerObj, onUpdate }) {
   };
 
   return (
-    <Card style={{ width: '18rem', margin: '10px' }}>
-      <Card.Body>
-        <Card.Title>{playerObj.first_name} {playerObj.last_name}</Card.Title>
-        <Card.Title>{playerObj.position}</Card.Title>
+    <Card style={{ margin: '40px' }}>
+      <Card.Body id="title">
+        <Card.Title id="name">{playerObj.first_name} {playerObj.last_name}</Card.Title>
+        <Card.Title id="position">{playerObj.position}</Card.Title>
       </Card.Body>
       <Card.Img variant="top" src={playerObj.image} alt={playerObj.last_name} />
       <Card.Body>
-        <p className="card-text bold">Height: {playerObj.height}</p>
-        <p className="card-text bold">Weight: {playerObj.weight} lbs.</p>
+        <div id="player-stats">
+          <div id="height">
+            <p className="card-text bold">Height: {playerObj.height}</p>
+          </div>
+          <p className="card-text bold">Weight: {playerObj.weight} lbs.</p>
+        </div>
+        <div className="buttons">
+          <div id="btnGroup1">
+            <Link href={`/player/edit/${playerObj.firebaseKey}`} style={{ margin: '10px' }} passHref>
+              <RiEditBoxLine />
+            </Link>
+          </div>
+          <div id="btnGroup2">
+            <RiDeleteBinLine onClick={deletePlayer} />
+          </div>
+        </div>
       </Card.Body>
-      <Card.Footer>
-        <Link href={`/player/edit/${playerObj.firebaseKey}`} passHref>
-          <Button variant="primary" className="m-2">EDIT</Button>
-        </Link>
-        <Button variant="danger" onClick={deletePlayer} className="m-2">
-          DELETE
-        </Button>
-      </Card.Footer>
     </Card>
   );
 }

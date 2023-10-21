@@ -33,10 +33,54 @@ body {
   border-radius: 0% !important;
   font-weight: 600;
   text-shadow: -1px 1px 4px black;
-  margin: 10px 20px 10px 0px !important;
+  margin: 10px 20px !important;
   box-shadow: -3px 3px 2px rgba(59, 58, 58, 0.705);
 }
 
 #logo {
   margin-left: 20px !important;
+}
+
+.search {
+  border: none !important;
+  border-radius: 0% !important;
+  margin: 10px 0px !important;
+}
+
+#title {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.card {
+  border: 1px solid black !important;
+  border-radius: 0%;
+  background-color: rgba(211, 211, 211, 0.116);
+  box-shadow: 5px 5px 2px rgba(59, 58, 58, 0.078);
+}
+
+#name, #position {
+  font-weight: 700;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#btnGroup1 {
+  margin-right: 10px;
+}
+
+#player-stats {
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 20px;
+}
+
+#header {
+  font-weight: 700;
 }

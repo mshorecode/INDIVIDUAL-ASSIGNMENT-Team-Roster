@@ -2,7 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 import {
-  Navbar, Container, Nav, Button,
+  Navbar, Nav, Button, Form, Col,
 } from 'react-bootstrap';
 import { signOut } from '../utils/auth';
 
@@ -12,17 +12,22 @@ export default function NavBar() {
       <Link passHref href="/">
         <Navbar.Brand id="logo">ACC Football</Navbar.Brand>
       </Link>
-      <Container>
-        <Nav className="me-auto">
-          {/* CLOSE NAVBAR ON LINK SELECTION: https://stackoverflow.com/questions/72813635/collapse-on-select-react-bootstrap-navbar-with-nextjs-not-working */}
-          <Link passHref href="/team">
-            <Nav.Link>Team</Nav.Link>
-          </Link>
-          <Link passHref href="/player/new">
-            <Nav.Link>Create Player</Nav.Link>
-          </Link>
-        </Nav>
-      </Container>
+      <Nav className="me-auto">
+        {/* CLOSE NAVBAR ON LINK SELECTION: https://stackoverflow.com/questions/72813635/collapse-on-select-react-bootstrap-navbar-with-nextjs-not-working */}
+        <Link passHref href="/team">
+          <Nav.Link>Team</Nav.Link>
+        </Link>
+        <Link passHref href="/player/new">
+          <Nav.Link>Create Player</Nav.Link>
+        </Link>
+      </Nav>
+      <Col xs="auto">
+        <Form.Control
+          type="text"
+          placeholder="Search"
+          className="search"
+        />
+      </Col>
       <Button id="logout" variant="danger" onClick={signOut}>Sign Out</Button>
     </Navbar>
   );
